@@ -70,8 +70,8 @@ class Game
 end
 ```
 
-Again, we want to avoid using the `receive_message_chain` helper method. It their place we want to use a double for our
-`GameFairy`. To that end we'll add `game_fairy` as helper methods via let.
+Again, we want to avoid using the `receive_message_chain` helper method. In its place we want to use a double for our
+`GameFairy`. To that end we'll add `game_fairy` as a helper methods via let.
 
 ```ruby
   describe '#done' do
@@ -79,9 +79,9 @@ Again, we want to avoid using the `receive_message_chain` helper method. It thei
 ```
 
 This gives us a double to use in place of the real game fairy, but we still need to stub out the methods being used by
-the `Game` class. We'll do with with `allow` and `receive`. We'll put those stubs into a before block in the root
+the `Game` class. We'll do this with `allow` and `receive`. We'll put those stubs into a before block in the root
 decribe so that both contexts can use it, and we'll add another helper method to dictate what value should be returned
-by `proclamation`. From there we fim
+by `proclamation`.
 
 ```ruby
     before do
@@ -106,7 +106,10 @@ declaration.
 
 # Conclusion
 
-This way might be a little less natural, but it's the recommended path made by the rspec documentation. You can find
+This way might be a little less natural, but it's the recommendedation made by the RSpec documentation. You may also
+want to check your code for tight coupling of objects if you're using `receive_message_chain` often.
+
+You can find
 [this code on my repo](https://github.com/danclark5/alternatives_to_receiving_message_chains).
 
 You can watch me converting an example on [YouTube](https://youtu.be/NNkax9g9GSs)
