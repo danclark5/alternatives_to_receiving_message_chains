@@ -109,4 +109,6 @@ declaration.
 This way might be a little less natural, but it's the recommended path made by the rspec documentation. You can find
 [this code on my repo](https://github.com/danclark5/alternatives_to_receiving_message_chains).
 
+You can watch me converting an example on [YouTube](https://youtu.be/NNkax9g9GSs)
+
 Thanks for reading!
